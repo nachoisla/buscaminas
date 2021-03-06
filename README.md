@@ -1,2 +1,2 @@
-# buscaminas
-Un buscaminas rudimentario programado en C#.
+# Buscaminas
+Un Buscaminas rudimentario programado en C#.
