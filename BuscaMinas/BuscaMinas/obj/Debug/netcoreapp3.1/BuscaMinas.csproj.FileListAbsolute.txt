@@ -1,0 +1,13 @@
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\bin\Debug\netcoreapp3.1\BuscaMinas.exe
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\bin\Debug\netcoreapp3.1\BuscaMinas.deps.json
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\bin\Debug\netcoreapp3.1\BuscaMinas.runtimeconfig.json
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\bin\Debug\netcoreapp3.1\BuscaMinas.runtimeconfig.dev.json
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\bin\Debug\netcoreapp3.1\BuscaMinas.dll
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\bin\Debug\netcoreapp3.1\BuscaMinas.pdb
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\obj\Debug\netcoreapp3.1\BuscaMinas.csprojAssemblyReference.cache
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\obj\Debug\netcoreapp3.1\BuscaMinas.AssemblyInfoInputs.cache
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\obj\Debug\netcoreapp3.1\BuscaMinas.AssemblyInfo.cs
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\obj\Debug\netcoreapp3.1\BuscaMinas.csproj.CoreCompileInputs.cache
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\obj\Debug\netcoreapp3.1\BuscaMinas.dll
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\obj\Debug\netcoreapp3.1\BuscaMinas.pdb
+C:\Users\ignac\source\repos\BuscaMinas\BuscaMinas\obj\Debug\netcoreapp3.1\BuscaMinas.genruntimeconfig.cache
