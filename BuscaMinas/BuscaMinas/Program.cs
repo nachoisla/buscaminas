@@ -6,7 +6,7 @@ namespace BuscaMinas
     {
         static public void IniciarJuego()
         {
-            char nivel;
+            string nivel;
             Mina[,] tablero;
             byte minas;
             byte contMinas;
@@ -19,11 +19,11 @@ namespace BuscaMinas
                 Console.WriteLine("Por favor, seleccione el nivel de dificultad");
                 Console.WriteLine("Principiante (P), Intermedio (I) o Experto (E)");
 
-                nivel = char.Parse(Console.ReadLine());
+                nivel = Console.ReadLine();
 
-            } while (nivel != 'P' && nivel != 'p' && nivel != 'I' && nivel != 'i' && nivel != 'E' && nivel != 'e');
+            } while (nivel != "P" && nivel != "p" && nivel != "I" && nivel != "i" && nivel != "E" && nivel != "e");
 
-            if (nivel == 'P' || nivel == 'p')
+            if (nivel == "P" || nivel == "p")
             {
                 tablero = new Mina[12, 10];
                 minas = 10;
@@ -31,7 +31,7 @@ namespace BuscaMinas
                 CrearTablero(tablero, minas, contMinas, contDescubiertas);
             }
 
-            if (nivel == 'I' || nivel == 'i')
+            if (nivel == "I" || nivel == "i")
             {
                 tablero = new Mina[20, 18];
                 minas = 40;
@@ -39,7 +39,7 @@ namespace BuscaMinas
                 CrearTablero(tablero, minas, contMinas, contDescubiertas);
             }
 
-            if (nivel == 'E' || nivel == 'e')
+            if (nivel == "E" || nivel == "e")
             {
                 tablero = new Mina[20, 32];
                 minas = 99;
@@ -180,7 +180,7 @@ namespace BuscaMinas
 
         static public void EleccionJugada(Mina[,] tablero, byte minas, byte contMinas, int contDescubiertas)
         {
-            char opcion;
+            string opcion;
             byte coord_i;
             byte coord_j;
 
@@ -188,15 +188,22 @@ namespace BuscaMinas
             {
                 Console.WriteLine("Elija si quiere descubrir una celda (D) o marcarla con una bandera / desmarcarla (B)");
 
-                opcion = char.Parse(Console.ReadLine());
+                opcion = Console.ReadLine();
 
-            } while (opcion != 'D' && opcion != 'd' && opcion != 'B' && opcion != 'b');
+            } while (opcion != "D" && opcion != "d" && opcion != "B" && opcion != "b");
 
             do
             {
                 Console.WriteLine($"Elija la fila (entre 1 y {tablero.GetLength(0) - 4})");
 
-                coord_i = byte.Parse(Console.ReadLine());
+                string y = Console.ReadLine();
+
+                if (y.Length == 0)
+                {
+                    y = "0";
+                }
+
+                coord_i = byte.Parse(y);
 
             } while (coord_i < 1 || coord_i > tablero.GetLength(0) - 4);
 
@@ -204,16 +211,23 @@ namespace BuscaMinas
             {
                 Console.WriteLine($"Elija la columna (entre 1 y {tablero.GetLength(1) - 2})");
 
-                coord_j = byte.Parse(Console.ReadLine());
+                string z = Console.ReadLine();
+
+                if (z.Length == 0)
+                {
+                    z = "0";
+                }
+
+                coord_j = byte.Parse(z);
 
             } while (coord_j < 1 || coord_j > tablero.GetLength(0) - 2);
 
             Jugada(opcion, tablero, minas, contMinas, contDescubiertas, coord_i, coord_j);
         }
 
-        static public void Jugada(char opcion, Mina[,] tablero, byte minas, byte contMinas, int contDescubiertas, byte coord_i, byte coord_j)
+        static public void Jugada(string opcion, Mina[,] tablero, byte minas, byte contMinas, int contDescubiertas, byte coord_i, byte coord_j)
         {
-            if ((opcion == 'D' || opcion == 'd') && tablero[coord_i + 2, coord_j]._esMina == true)
+            if ((opcion == "D" || opcion == "d") && tablero[coord_i + 2, coord_j]._esMina == true)
             {
                 for (byte i = 0; i < tablero.GetLength(0); i++)
                 {
@@ -233,7 +247,7 @@ namespace BuscaMinas
                 Environment.Exit(0);
             }
 
-            if ((opcion == 'D' || opcion == 'd') && tablero[coord_i + 2, coord_j]._esMina == false)
+            if ((opcion == "D" || opcion == "d") && tablero[coord_i + 2, coord_j]._esMina == false)
             {
                 tablero[coord_i + 2, coord_j]._descubierta = true;
 
@@ -247,7 +261,7 @@ namespace BuscaMinas
                 }
             }
 
-            if ((opcion == 'B' || opcion == 'b') && tablero[coord_i + 2, coord_j]._esMina == true && tablero[coord_i + 2, coord_j]._bandera == false)
+            if ((opcion == "B" || opcion == "b") && tablero[coord_i + 2, coord_j]._esMina == true && tablero[coord_i + 2, coord_j]._bandera == false)
             {
                 tablero[coord_i + 2, coord_j]._bandera = true;
 
@@ -261,7 +275,7 @@ namespace BuscaMinas
                     Environment.Exit(0);
                 }
             }
-            else if ((opcion == 'B' || opcion == 'b') && tablero[coord_i + 2, coord_j]._esMina == true && tablero[coord_i + 2, coord_j]._bandera == true)
+            else if ((opcion == "B" || opcion == "b") && tablero[coord_i + 2, coord_j]._esMina == true && tablero[coord_i + 2, coord_j]._bandera == true)
             {
                 tablero[coord_i + 2, coord_j]._bandera = false;
 
@@ -269,13 +283,13 @@ namespace BuscaMinas
                 minas++;
             }
 
-            if ((opcion == 'B' || opcion == 'b') && tablero[coord_i + 2, coord_j]._esMina == false && tablero[coord_i + 2, coord_j]._bandera == false)
+            if ((opcion == "B" || opcion == "b") && tablero[coord_i + 2, coord_j]._esMina == false && tablero[coord_i + 2, coord_j]._bandera == false)
             {
                 tablero[coord_i + 2, coord_j]._bandera = true;
 
                 contMinas--;
             }
-            if ((opcion == 'B' || opcion == 'b') && tablero[coord_i + 2, coord_j]._esMina == false && tablero[coord_i + 2, coord_j]._bandera == true)
+            else if ((opcion == "B" || opcion == "b") && tablero[coord_i + 2, coord_j]._esMina == false && tablero[coord_i + 2, coord_j]._bandera == true)
             {
                 tablero[coord_i + 2, coord_j]._bandera = false;
 
